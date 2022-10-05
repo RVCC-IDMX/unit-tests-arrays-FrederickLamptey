@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /*
  * arrays-04.js
  * Language: javascript
@@ -17,6 +18,11 @@
  */
 function getAbsoluteSum(nums) {
   // write your code here & return value
+  let total = 0;
+  for (let i = 0; i < nums.length; i++) {
+    total += Math.abs(nums[i]);
+  }
+  return total;
 }
 
 /**
@@ -28,6 +34,8 @@ function getAbsoluteSum(nums) {
  */
 function removeStrings(arr) {
   // write your code here & return value
+  const result = arr.filter((n) => typeof n !== 'string');
+  return result;
 }
 
 /**
@@ -50,6 +58,8 @@ function removeStrings(arr) {
  */
 function findMinMax(arr) {
   // write your code here & return value
+  const result = [Math.min(...arr), Math.max(...arr)];
+  return result;
 }
 
 /**
@@ -57,7 +67,7 @@ function findMinMax(arr) {
  * @param {array} numbers - the array with 10 digits of a phone number
  * @returns {string} - the phone number in the format (123) 456-7890
  * ? example: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0] => '(123) 456-7890'
- * ?
+ * ?[(,1,2,3,) ,4,5,6,-,7,8,9,0]
  * ? must use the splice() array method - https://youtu.be/ok-dya7hNm0
  * ? must use the join() array method - https://youtu.be/90MVWda5DlM
  * ? must not change the original array - make a shallow copy
@@ -74,6 +84,11 @@ function findMinMax(arr) {
  */
 function getTelNo(numbers) {
   // write your code here & return value
+  const copyNumbers = [...numbers];
+  copyNumbers.splice(6, 0, '-');
+  copyNumbers.splice(3, 0, ') ');
+  copyNumbers.splice(0, 0, '(');
+  return copyNumbers.join('');
 }
 
 module.exports = {

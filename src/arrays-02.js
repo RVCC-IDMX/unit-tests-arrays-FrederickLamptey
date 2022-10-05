@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /*
  * arrays-02.js
  * Language: javascript
@@ -42,6 +43,8 @@
  */
 function findTheCharacterAtIndex(str, indx) {
   // write your code here & return value
+  const word = str.charAt(indx);
+  return word;
 }
 
 /**
@@ -53,6 +56,8 @@ function findTheCharacterAtIndex(str, indx) {
  */
 function sliceTheString(str, start, end) {
   // write your code here & return value
+  const string = str.slice([start], [end]);
+  return string;
 }
 
 /**
@@ -63,6 +68,8 @@ function sliceTheString(str, start, end) {
  */
 function splitTheString(str, separator) {
   // write your code here & return value
+  const arr = str.split([separator]);
+  return arr;
 }
 
 /**
@@ -72,6 +79,8 @@ function splitTheString(str, separator) {
  */
 function makeAllUpperCase(str) {
   // write your code here & return value
+  const word = str.toUpperCase();
+  return word;
 }
 
 /**
@@ -81,6 +90,8 @@ function makeAllUpperCase(str) {
  */
 function makeAllLowerCase(str) {
   // write your code here & return value
+  const word = str.toLowerCase();
+  return word;
 }
 
 /**
@@ -93,6 +104,8 @@ function makeAllLowerCase(str) {
  */
 function makeWordTitleCase(word) {
   // write your code here & return value
+  const wordCap = word[0].toUpperCase();
+  return wordCap + word.substring(1).toLowerCase();
 }
 
 /**
@@ -105,6 +118,8 @@ function makeWordTitleCase(word) {
  */
 function replaceTheString(str, oldStr, newStr) {
   // write your code here & return value
+  const sentence = str.replace(oldStr, newStr);
+  return sentence;
 }
 
 /**
@@ -117,6 +132,12 @@ function replaceTheString(str, oldStr, newStr) {
  */
 function makeSentenceTitleCase(sentence) {
   // write your code here & return value
+  const pieces = sentence.split(' ');
+  for (let i = 0; i < pieces.length; i++) {
+    const k = pieces[i].charAt(0).toUpperCase();
+    pieces[i] = k + pieces[i].substr(1);
+  }
+  return pieces.join(' ');
 }
 
 module.exports = {

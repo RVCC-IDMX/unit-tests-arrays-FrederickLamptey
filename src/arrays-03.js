@@ -18,6 +18,8 @@
  */
 function addUpArrayElements(arr) {
   // write your code here & return value
+  const result = arr.reduce((sum, current) => sum + current, 0);
+  return result;
 }
 
 /**
@@ -29,6 +31,8 @@ function addUpArrayElements(arr) {
  */
 function makeSquareNumbers(arr) {
   // write your code here & return value
+  const result = arr.map((x) => x ** 2);
+  return result;
 }
 
 /**
@@ -43,6 +47,8 @@ function makeSquareNumbers(arr) {
  */
 function filterForLargeWords(arr, length) {
   // write your code here & return value
+  const result = arr.filter((n) => n.length > length);
+  return result;
 }
 
 /**
@@ -54,6 +60,8 @@ function filterForLargeWords(arr, length) {
  */
 function findTheFirstEvenNumber(arr) {
   // write your code here & return value
+  const even = arr.filter((number) => number % 2 === 0);
+  return even[0];
 }
 
 /**
@@ -66,6 +74,9 @@ function findTheFirstEvenNumber(arr) {
  */
 function sortCaseSensitive(arr) {
   // write your code here & return value
+  const newArr = [...arr];
+  const result = newArr.sort();
+  return result;
 }
 
 /**
@@ -79,6 +90,8 @@ function sortCaseSensitive(arr) {
  */
 function makeTheString(arr, separator) {
   // write your code here & return value
+  const result = arr.join([separator]);
+  return result;
 }
 
 /**
@@ -91,6 +104,9 @@ function makeTheString(arr, separator) {
  */
 function reverseTheArray(arr) {
   // write your code here & return value
+  const newArr = [...arr];
+  const result = newArr.reverse();
+  return result;
 }
 
 /**
@@ -103,6 +119,12 @@ function reverseTheArray(arr) {
  */
 function makeMirrorArray(arr) {
   // write your code here & return value
+  const arrSec = [...arr];
+  const arrSec2 = [...arr];
+  arrSec2.pop();
+  arrSec2.reverse();
+  const result = arrSec.concat(arrSec2);
+  return result;
 }
 
 /**
@@ -116,6 +138,8 @@ function makeMirrorArray(arr) {
  */
 function dropRight(arr, n) {
   // write your code here & return value
+  const result = arr.slice(0, -n);
+  return result;
 }
 
 /**
@@ -129,6 +153,8 @@ function dropRight(arr, n) {
  */
 function dropLeft(arr, n) {
   // write your code here & return value
+  const result = arr.slice(n);
+  return result;
 }
 
 /**
@@ -142,6 +168,7 @@ function dropLeft(arr, n) {
  */
 function checkArrayForValue(arr, val) {
   // write your code here & return value
+  return arr.includes(val);
 }
 
 module.exports = {
